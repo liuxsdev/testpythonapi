@@ -29,3 +29,10 @@ async def maptile(x: int, y: int, z: int):
 
 
 
+@app.get("/{x}/{y}/{z}")
+async def maptile(x: int, y: int, z: int):
+    image = BytesIO()
+    img = gen_png(x,y,z)
+    img.save(image, format="PNG")
+    image.seek(0)
+    return Response(content=image.read(), media_type="image/png")
