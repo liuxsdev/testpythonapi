@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.responses import Response
 from PIL import Image,ImageDraw,ImageFont
 from io import BytesIO
-from os import join
+from os.path import join
 app = FastAPI()
 
 
