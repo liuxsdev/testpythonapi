@@ -37,7 +37,7 @@ async def maptile(x: int, y: int, z: int):
     image.seek(0)
     return Response(content=image.read(), media_type="image/png")
 
-@app.get("/")
+@app.get("/api/tile")
 async def maptile(x: int, y: int, z: int):
     image = BytesIO()
     img = gen_png(x,y,z)
